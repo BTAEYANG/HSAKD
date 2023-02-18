@@ -114,7 +114,7 @@ net = torch.nn.DataParallel(net)
 
 tmodel = getattr(models, args.tarch)
 tnet = tmodel(num_classes=num_classes).cuda()
-tnet.load_state_dict(checkpoint['net'])
+tnet.load_state_dict(checkpoint['model'])
 tnet.eval()
 tnet = torch.nn.DataParallel(tnet)
 
